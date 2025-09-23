@@ -1,0 +1,241 @@
+[
+  {
+    "id": "inv-001",
+    "number": "INV-2024-001",
+    "amount": 5000,
+    "currency": "USDC",
+    "status": "paid",
+    "clientName": "Acme Corporation",
+    "clientEmail": "billing@acme.com",
+    "dueDate": "2024-01-15",
+    "issueDate": "2023-12-15",
+    "description": "Full-stack web application development",
+    "items": [
+      {
+        "description": "Frontend Development (React/Next.js)",
+        "quantity": 40,
+        "rate": 75,
+        "amount": 3000
+      },
+      {
+        "description": "Backend API Development",
+        "quantity": 20,
+        "rate": 85,
+        "amount": 1700
+      },
+      {
+        "description": "Database Design & Setup",
+        "quantity": 4,
+        "rate": 75,
+        "amount": 300
+      }
+    ],
+    "paidDate": "2024-01-10T14:30:00Z",
+    "txHash": "0x1a2b3c4d5e6f7890abcdef1234567890abcdef12"
+  },
+  {
+    "id": "inv-002",
+    "number": "INV-2024-002",
+    "amount": 3500,
+    "currency": "USDC",
+    "status": "escrowed",
+    "clientName": "TechStart Inc.",
+    "clientEmail": "finance@techstart.io",
+    "dueDate": "2024-02-01",
+    "issueDate": "2024-01-01",
+    "description": "Mobile app UI/UX design and development",
+    "items": [
+      {
+        "description": "UI/UX Design",
+        "quantity": 25,
+        "rate": 80,
+        "amount": 2000
+      },
+      {
+        "description": "Mobile App Development",
+        "quantity": 20,
+        "rate": 75,
+        "amount": 1500
+      }
+    ],
+    "escrowDate": "2024-01-25T09:15:00Z",
+    "escrowAmount": 3500
+  },
+  {
+    "id": "inv-003",
+    "number": "INV-2024-003",
+    "amount": 7500,
+    "currency": "USDC",
+    "status": "sent",
+    "clientName": "Global Enterprises Ltd",
+    "clientEmail": "accounts@globalent.com",
+    "dueDate": "2024-02-15",
+    "issueDate": "2024-01-15",
+    "description": "E-commerce platform development",
+    "items": [
+      {
+        "description": "Platform Architecture",
+        "quantity": 15,
+        "rate": 100,
+        "amount": 1500
+      },
+      {
+        "description": "Frontend Development",
+        "quantity": 50,
+        "rate": 80,
+        "amount": 4000
+      },
+      {
+        "description": "Payment Integration",
+        "quantity": 20,
+        "rate": 100,
+        "amount": 2000
+      }
+    ],
+    "sentDate": "2024-01-15T16:45:00Z"
+  },
+  {
+    "id": "inv-004",
+    "number": "INV-2024-004",
+    "amount": 2200,
+    "currency": "USDC",
+    "status": "pending",
+    "clientName": "Creative Agency Co",
+    "clientEmail": "billing@creativeagency.com",
+    "dueDate": "2024-02-10",
+    "issueDate": "2024-01-10",
+    "description": "Website redesign and optimization",
+    "items": [
+      {
+        "description": "Website Redesign",
+        "quantity": 20,
+        "rate": 85,
+        "amount": 1700
+      },
+      {
+        "description": "Performance Optimization",
+        "quantity": 10,
+        "rate": 50,
+        "amount": 500
+      }
+    ]
+  },
+  {
+    "id": "inv-005",
+    "number": "INV-2024-005",
+    "amount": 4800,
+    "currency": "USDC",
+    "status": "draft",
+    "clientName": "Startup Ventures",
+    "clientEmail": "team@startupventures.com",
+    "dueDate": "2024-02-20",
+    "issueDate": "2024-01-20",
+    "description": "MVP development and consulting",
+    "items": [
+      {
+        "description": "Technical Consulting",
+        "quantity": 16,
+        "rate": 125,
+        "amount": 2000
+      },
+      {
+        "description": "MVP Development",
+        "quantity": 35,
+        "rate": 80,
+        "amount": 2800
+      }
+    ]
+  },
+  {
+    "id": "inv-006",
+    "number": "INV-2024-006",
+    "amount": 6200,
+    "currency": "USDC",
+    "status": "overdue",
+    "clientName": "Legacy Systems Corp",
+    "clientEmail": "finance@legacysystems.com",
+    "dueDate": "2024-01-05",
+    "issueDate": "2023-12-05",
+    "description": "System migration and modernization",
+    "items": [
+      {
+        "description": "Legacy System Analysis",
+        "quantity": 20,
+        "rate": 110,
+        "amount": 2200
+      },
+      {
+        "description": "Migration Development",
+        "quantity": 40,
+        "rate": 100,
+        "amount": 4000
+      }
+    ],
+    "sentDate": "2023-12-05T11:20:00Z"
+  },
+  {
+    "id": "inv-007",
+    "number": "INV-2024-007",
+    "amount": 3200,
+    "currency": "USDC",
+    "status": "sent",
+    "clientName": "Digital Marketing Pro",
+    "clientEmail": "billing@digitalmarketingpro.com",
+    "dueDate": "2024-02-25",
+    "issueDate": "2024-01-25",
+    "description": "Marketing automation platform",
+    "items": [
+      {
+        "description": "Platform Setup",
+        "quantity": 12,
+        "rate": 90,
+        "amount": 1080
+      },
+      {
+        "description": "Custom Integrations",
+        "quantity": 18,
+        "rate": 95,
+        "amount": 1710
+      },
+      {
+        "description": "Training & Documentation",
+        "quantity": 8,
+        "rate": 50,
+        "amount": 400
+      }
+    ],
+    "sentDate": "2024-01-25T13:10:00Z"
+  },
+  {
+    "id": "inv-008",
+    "number": "INV-2024-008",
+    "amount": 8500,
+    "currency": "USDC",
+    "status": "pending",
+    "clientName": "Enterprise Solutions Inc",
+    "clientEmail": "procurement@enterprisesolutions.com",
+    "dueDate": "2024-03-01",
+    "issueDate": "2024-02-01",
+    "description": "Enterprise dashboard and analytics",
+    "items": [
+      {
+        "description": "Dashboard Development",
+        "quantity": 45,
+        "rate": 95,
+        "amount": 4275
+      },
+      {
+        "description": "Analytics Integration",
+        "quantity": 25,
+        "rate": 110,
+        "amount": 2750
+      },
+      {
+        "description": "Data Visualization",
+        "quantity": 15,
+        "rate": 100,
+        "amount": 1500
+      }
+    ]
+  }
+]

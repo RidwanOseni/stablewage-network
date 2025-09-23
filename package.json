@@ -1,0 +1,52 @@
+{
+  "name": "stablewage_network",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for StableWage Network - Next.js frontend with Hardhat smart contracts",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:contracts\" \"npm run dev:frontend\"",
+
+    "dev:frontend": "npm run dev --workspace=packages/nextjs",
+    "dev:contracts": "npm run node --workspace=packages/hardhat",
+
+    "build": "concurrently \"npm run build:frontend\" \"npm run compile:contracts\"",
+    "build:frontend": "npm run build --workspace=packages/nextjs",
+    "compile:contracts": "npm run compile --workspace=packages/hardhat",
+
+    "test": "concurrently \"npm run test:frontend\" \"npm run test:contracts\"",
+    "test:frontend": "npm run test --workspace=packages/nextjs",
+    "test:contracts": "npm run test --workspace=packages/hardhat",
+
+    "deploy:local": "npm run deploy --workspace=packages/hardhat",
+
+    "clean": "npm run clean --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "lint:fix": "npm run lint:fix --workspaces --if-present",
+
+    "check-updates": "npx npm-check-updates",
+    "update-deps": "npx npm-check-updates -u && npm install",
+    "audit": "npm audit --workspaces --audit-level moderate",
+    "install:all": "npm install && npm install --workspace=packages/nextjs && npm install --workspace=packages/hardhat"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "npm-check-updates": "^16.14.12"
+  },
+  "workspaces": [
+    "packages/nextjs",
+    "packages/hardhat"
+  ],
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "keywords": [
+    "monorepo",
+    "nextjs",
+    "hardhat",
+    "blockchain",
+    "viem",
+    "ethereum",
+    "smart-contracts"
+  ]
+}

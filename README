@@ -1,0 +1,22 @@
+# StableWage Network
+
+StableWage Network is a decentralized application (DApp) for stablecoin payroll, smart invoicing, and escrow-backed advances.
+
+## Monorepo Structure
+- `packages/nextjs` → Frontend (Next.js 14, Tailwind, wagmi)
+- `packages/hardhat` → Smart contracts (Hardhat, Solidity, ethers.js)
+
+## Getting Started
+### 1. Install dependencies
+npm install
+
+### 2. Run local blockchain + frontend
+npm run dev
+
+### 3. Build
+npm run build
+
+## Features
+- Stablecoin payroll
+- Smart invoicing
+- Escrow-backed salary advances
