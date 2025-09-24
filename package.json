@@ -5,24 +5,18 @@
   "description": "Monorepo for StableWage Network - Next.js frontend with Hardhat smart contracts",
   "scripts": {
     "dev": "concurrently \"npm run dev:contracts\" \"npm run dev:frontend\"",
-
     "dev:frontend": "npm run dev --workspace=packages/nextjs",
     "dev:contracts": "npm run node --workspace=packages/hardhat",
-
     "build": "concurrently \"npm run build:frontend\" \"npm run compile:contracts\"",
     "build:frontend": "npm run build --workspace=packages/nextjs",
     "compile:contracts": "npm run compile --workspace=packages/hardhat",
-
     "test": "concurrently \"npm run test:frontend\" \"npm run test:contracts\"",
     "test:frontend": "npm run test --workspace=packages/nextjs",
     "test:contracts": "npm run test --workspace=packages/hardhat",
-
     "deploy:local": "npm run deploy --workspace=packages/hardhat",
-
     "clean": "npm run clean --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "lint:fix": "npm run lint:fix --workspaces --if-present",
-
     "check-updates": "npx npm-check-updates",
     "update-deps": "npx npm-check-updates -u && npm install",
     "audit": "npm audit --workspaces --audit-level moderate",
@@ -48,5 +42,9 @@
     "viem",
     "ethereum",
     "smart-contracts"
-  ]
+  ],
+  "optionalDependencies": {
+    "@react-native-async-storage/async-storage": "^1.24.0",
+    "pino-pretty": "^13.1.1"
+  }
 }

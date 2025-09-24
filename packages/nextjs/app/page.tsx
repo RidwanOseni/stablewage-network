@@ -1,312 +1,223 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Shield, Zap, DollarSign, Users, Clock, CheckCircle } from "lucide-react"
-import Link from "next/link"
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, DollarSign, Clock, CheckCircle } from "lucide-react";
+import Link from "next/link";
+import { ConnectWallet } from "@/components/ConnectWallet";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="flex flex-col min-h-[100dvh]">
       {/* Header */}
-      <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <DollarSign className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold text-foreground">StableWage</span>
-            </div>
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
-                Features
-              </a>
-              <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
-                How it Works
-              </a>
-              <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-                Pricing
-              </a>
-              <Button variant="outline" size="sm" asChild>
-                <Link href="/auth/signin">Sign In</Link>
-              </Button>
-              <Button size="sm" asChild>
-                <Link href="/auth/signup">Get Started</Link>
-              </Button>
-            </nav>
-          </div>
+      <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur">
+        <div className="container flex h-14 items-center justify-between px-4 md:px-6">
+          <Link href="#" className="font-bold" prefetch={false}>
+            StableWage
+          </Link>
+          <nav className="hidden gap-6 text-sm sm:flex">
+            <Link href="#features" prefetch={false}>Features</Link>
+            <Link href="#how-it-works" prefetch={false}>How it Works</Link>
+            <Link href="#waitlist" prefetch={false}>Pricing</Link>
+          </nav>
+          <ConnectWallet />
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <Badge variant="secondary" className="mb-6">
-              <Zap className="w-4 h-4 mr-2" />
-              Instant Stablecoin Payroll
-            </Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              The Future of
-              <span className="text-primary"> Freelance Payments</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              Instant stablecoin payroll, smart invoicing, and escrow-backed advances. Get paid faster, work with
-              confidence.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button size="lg" className="w-full sm:w-auto">
-                Join Waitlist
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto bg-transparent">
-                Watch Demo
-              </Button>
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container grid gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-12 items-center">
+            <div className="space-y-6">
+              <Badge variant="secondary" className="inline-flex items-center">Instant Stablecoin Payroll</Badge>
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+                The Future of Freelance Payments
+              </h1>
+              <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
+                Instant stablecoin payroll, smart invoicing, and escrow-backed advances. Get paid faster,
+                work with confidence.
+              </p>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <Button size="lg">Join Waitlist</Button>
+                <Button variant="outline" size="lg">Watch Demo</Button>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
+                <Badge variant="secondary">Bank-grade Security</Badge>
+                <Badge variant="secondary">Instant Settlements</Badge>
+                <Badge variant="secondary">1000+ Users</Badge>
+              </div>
             </div>
-            <div className="flex items-center justify-center space-x-8 text-sm text-muted-foreground">
-              <div className="flex items-center">
-                <Shield className="w-4 h-4 mr-2 text-primary" />
-                Bank-grade Security
-              </div>
-              <div className="flex items-center">
-                <Clock className="w-4 h-4 mr-2 text-primary" />
-                Instant Settlements
-              </div>
-              <div className="flex items-center">
-                <Users className="w-4 h-4 mr-2 text-primary" />
-                1000+ Users
-              </div>
+            <div className="w-full h-56 md:h-72 lg:h-80 bg-gray-300 dark:bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 dark:text-gray-400">
+              StableWage Demo
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="features" className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Everything you need for modern payroll
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+    </section>
+        {/* Features Section */}
+    <section id="features" className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Everything you need for modern payroll</h2>
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               Built for freelancers and employers who demand speed, security, and transparency
             </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle>Instant Payroll</CardTitle>
-                <CardDescription>
-                  Get paid in stablecoins instantly. No more waiting for bank transfers or dealing with currency
-                  volatility.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <DollarSign className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle>Smart Invoicing</CardTitle>
-                <CardDescription>
-                  Create professional invoices with built-in escrow protection and automated payment tracking.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle>Escrow Advances</CardTitle>
-                <CardDescription>
-                  Get up to 70% of your invoice value upfront with our secure escrow-backed advance system.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
         </div>
-      </section>
-
-      {/* How It Works */}
-      <section id="how-it-works" className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">How StableWage Works</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Simple, secure, and transparent payment process
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-primary-foreground">1</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Create Invoice</h3>
-              <p className="text-muted-foreground">
-                Generate professional invoices with smart contract integration for automatic escrow protection.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-primary-foreground">2</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Get Advance</h3>
-              <p className="text-muted-foreground">
-                Request up to 70% of your invoice value instantly with our LTV-based advance system.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-primary-foreground">3</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Instant Payment</h3>
-              <p className="text-muted-foreground">
-                Receive payments in stablecoins instantly when clients pay, with automatic advance settlement.
-              </p>
-            </div>
-          </div>
+        <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 sm:grid-cols-2 md:grid-cols-3 lg:gap-12">
+          <Card>
+            <CardHeader>
+              <DollarSign className="w-8 h-8 text-primary" />
+              <CardTitle>Instant Payroll</CardTitle>
+              <CardDescription>
+                Get paid in stablecoins instantly. No more waiting for bank transfers or dealing with currency
+                volatility.
+              </CardDescription>
+            </CardHeader>
+            <Link href="#" className="px-6 pb-4 text-sm font-medium text-primary hover:underline" prefetch={false}>
+              Learn More
+              <ArrowRight className="w-4 h-4 inline-block ml-1" />
+            </Link>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CheckCircle className="w-8 h-8 text-primary" />
+              <CardTitle>Smart Invoicing</CardTitle>
+              <CardDescription>
+                Create professional invoices with built-in escrow protection and automated payment tracking.
+              </CardDescription>
+            </CardHeader>
+            <Link href="#" className="px-6 pb-4 text-sm font-medium text-primary hover:underline" prefetch={false}>
+              Learn More
+              <ArrowRight className="w-4 h-4 inline-block ml-1" />
+            </Link>
+          </Card>
+          <Card>
+            <CardHeader>
+              <Clock className="w-8 h-8 text-primary" />
+              <CardTitle>Escrow Advances</CardTitle>
+              <CardDescription>
+                Get up to 70% of your invoice value upfront with our secure escrow-backed advance system.
+              </CardDescription>
+            </CardHeader>
+            <Link href="#" className="px-6 pb-4 text-sm font-medium text-primary hover:underline" prefetch={false}>
+              Learn More
+              <ArrowRight className="w-4 h-4 inline-block ml-1" />
+            </Link>
+          </Card>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* Waitlist Section */}
-      <section className="py-20 bg-primary/5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Join the Waitlist</h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Be among the first to experience the future of freelance payments. Get early access and exclusive
-              benefits.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input type="email" placeholder="Enter your email" className="flex-1" />
-              <Button type="submit" className="sm:w-auto">
-                Join Waitlist
-              </Button>
-            </div>
-
-            <div className="mt-8 flex items-center justify-center space-x-6 text-sm text-muted-foreground">
-              <div className="flex items-center">
-                <CheckCircle className="w-4 h-4 mr-2 text-primary" />
-                No spam, ever
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="w-4 h-4 mr-2 text-primary" />
-                Early access
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="w-4 h-4 mr-2 text-primary" />
-                Exclusive benefits
-              </div>
-            </div>
-          </div>
+    {/* How It Works */}
+    <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">How StableWage Works</h2>
+          <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            Simple, secure, and transparent payment process
+          </p>
         </div>
-      </section>
+        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-3 lg:gap-12 relative">
+          {/* Line connector - simplified visualization */}
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-300 dark:bg-gray-700 hidden sm:block"></div>
+          
+          {/* Step 1 */}
+          <Card className="relative z-10 p-6 text-center">
+            <div className="w-10 h-10 flex items-center justify-center bg-primary text-primary-foreground rounded-full mx-auto mb-4 font-bold">1</div>
+            <CardTitle>Create Invoice</CardTitle>
+            <CardDescription>
+              Generate professional invoices with smart contract integration for automatic escrow protection.
+            </CardDescription>
+          </Card>
+
+          {/* Step 2 */}
+          <Card className="relative z-10 p-6 text-center">
+            <div className="w-10 h-10 flex items-center justify-center bg-primary text-primary-foreground rounded-full mx-auto mb-4 font-bold">2</div>
+            <CardTitle>Get Advance</CardTitle>
+            <CardDescription>
+              Request up to 70% of your invoice value instantly with our LTV-based advance system.
+            </CardDescription>
+          </Card>
+
+          {/* Step 3 */}
+          <Card className="relative z-10 p-6 text-center">
+            <div className="w-10 h-10 flex items-center justify-center bg-primary text-primary-foreground rounded-full mx-auto mb-4 font-bold">3</div>
+            <CardTitle>Instant Payment</CardTitle>
+            <CardDescription>
+              Receive payments in stablecoins instantly when clients pay, with automatic advance settlement.
+            </CardDescription>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    {/* Waitlist Section */}
+    <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+        <div className="space-y-3">
+          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Join the Waitlist</h2>
+          <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            Be among the first to experience the future of freelance payments. Get early access and exclusive
+            benefits.
+          </p>
+        </div>
+        <div className="mx-auto w-full max-w-sm space-y-2">
+          <form className="flex space-x-2">
+            <Input type="email" placeholder="Enter your email" className="max-w-lg flex-1" />
+            <Button type="submit">Join Waitlist</Button>
+          </form>
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            <Badge variant="secondary">No spam, ever</Badge>
+            <Badge variant="secondary" className="ml-2">Early access</Badge>
+            <Badge variant="secondary" className="ml-2">Exclusive benefits</Badge>
+          </p>
+        </div>
+      </div>
+    </section>
+      </main>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <DollarSign className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <span className="text-xl font-bold text-foreground">StableWage</span>
-              </div>
-              <p className="text-muted-foreground">The future of freelance payments, built on blockchain technology.</p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-foreground mb-4">Product</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Security
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    API
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-foreground mb-4">Company</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-foreground mb-4">Legal</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Terms
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Compliance
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 StableWage Network. All rights reserved.</p>
-          </div>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+        <div className="flex flex-col items-start">
+          <p className="text-lg font-bold">StableWage</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            The future of freelance payments, built on blockchain technology.
+          </p>
         </div>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6 text-sm">
+          <div>
+            <h4 className="font-semibold mb-1">Product</h4>
+            <ul className="space-y-1 text-gray-500 dark:text-gray-400">
+              <li><Link href="#" prefetch={false}>Features</Link></li>
+              <li><Link href="#" prefetch={false}>Pricing</Link></li>
+              <li><Link href="#" prefetch={false}>Security</Link></li>
+              <li><Link href="#" prefetch={false}>API</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-1">Company</h4>
+            <ul className="space-y-1 text-gray-500 dark:text-gray-400">
+              <li><Link href="#" prefetch={false}>About</Link></li>
+              <li><Link href="#" prefetch={false}>Blog</Link></li>
+              <li><Link href="#" prefetch={false}>Careers</Link></li>
+              <li><Link href="#" prefetch={false}>Contact</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-1">Legal</h4>
+            <ul className="space-y-1 text-gray-500 dark:text-gray-400">
+              <li><Link href="#" prefetch={false}>Privacy</Link></li>
+              <li><Link href="#" prefetch={false}>Terms</Link></li>
+              <li><Link href="#" prefetch={false}>Compliance</Link></li>
+            </ul>
+          </div>
+        </nav>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 sm:mt-0 sm:self-end">
+          © 2024 StableWage Network. All rights reserved.
+        </p>
       </footer>
     </div>
-  )
+  );
 }
